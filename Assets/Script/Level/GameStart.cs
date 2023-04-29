@@ -21,6 +21,7 @@ public class GameStart : MonoBehaviour
     private void Play()
     {
         _player.Play();
+        _player.Reset();
         _holder.enabled = true;
         _maps.Play();
     }

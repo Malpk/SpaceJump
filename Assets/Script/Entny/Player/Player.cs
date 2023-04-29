@@ -12,9 +12,11 @@ public class Player : MonoBehaviour
     [SerializeField] private JumpScore _score;
     [SerializeField] private GravitySet _gravitySet;
     [SerializeField] private PlayerMovement _movement;
+    [SerializeField] private SpriteRenderer _sprite;
 
     private bool _isPlay;
     public int Height => _score.CurreHeight;
+
 
     private void Start()
     {
@@ -25,14 +27,19 @@ public class Player : MonoBehaviour
 
     public void Play()
     {
-        _score.Reset();
         enabled = true; 
-        _gravitySet.Reset();
     }
 
     public void Stop()
     {
         enabled = false;
+        _movement.BreakJump();
+    }
+
+    public void Reset()
+    {
+        _score.Reset();
+        _gravitySet.Reset();
     }
 
     public void SetBlock(bool block)
@@ -49,11 +56,16 @@ public class Player : MonoBehaviour
         }
     }
     
-
     private void FixedUpdate()
     {
         var x = _isPlay ? Input.GetAxis("Horizontal") : 0;
         _movement.Move(x);
+        if(_gravitySet.IsGround)
+            Jump(_JumpHeight, _jumpDuration);
+    }
+
+    public void SetSpriteDirection(float direction)
+    { 
     }
 
     public void Jump(float height, float duration)
@@ -65,7 +77,6 @@ public class Player : MonoBehaviour
     {
         if (_isPlay)
         {
-            _movement.BreakJump();
             OnDead?.Invoke();
         }
     }

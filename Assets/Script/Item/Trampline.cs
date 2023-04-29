@@ -5,7 +5,7 @@ public class Trampline : MonoBehaviour
     [SerializeField] private float _jumpHeight;
     [SerializeField] private float _jumpDuration;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out Player player))
         {
