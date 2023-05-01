@@ -9,7 +9,8 @@ public class Trampline : MonoBehaviour
     {
         if (collision.TryGetComponent(out Player player))
         {
-            player.Jump(_jumpHeight, _jumpDuration);
+            if(player.IsPlay)
+                player.Jump(_jumpHeight, _jumpDuration);
         }
     }
 

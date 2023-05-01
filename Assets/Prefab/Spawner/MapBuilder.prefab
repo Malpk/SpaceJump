@@ -313,6 +313,7 @@ MonoBehaviour:
   _poolHolder: {fileID: 3851351108587152301}
   _spawners: []
   _player: {fileID: 0}
+  _score: {fileID: 0}
 --- !u!114 &3851351108587152301
 MonoBehaviour:
   m_ObjectHideFlags: 0

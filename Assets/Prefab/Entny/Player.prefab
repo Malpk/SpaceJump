@@ -187,22 +187,22 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.112448215
     - serializedVersion: 3
-      time: 0.3004386
-      value: 0.67684704
-      inSlope: 1.1776514
-      outSlope: 1.1776514
+      time: 0.28730026
+      value: 0.6203037
+      inSlope: 1.1607927
+      outSlope: 1.1607927
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.0972448
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 0.1866802
+      outSlope: 0.1866802
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.14434178
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -211,18 +211,6 @@ MonoBehaviour:
   _onJump:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CameraHolder, Assembly-CSharp
-        m_MethodName: UpdateHeight
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: JumpScore, Assembly-CSharp
         m_MethodName: UpdateScore
@@ -343,8 +331,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playOnStart: 0
   _distanceSide: 18
-  _JumpHeight: 0
-  _jumpDuration: 0
+  _JumpHeight: 7
+  _jumpDuration: 0.7
   OnDead:
     m_PersistentCalls:
       m_Calls:
@@ -360,7 +348,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _score: {fileID: 0}
   _gravitySet: {fileID: 4299033421266652201}
   _movement: {fileID: 4299033421255644926}
 --- !u!114 &4299033421266652201
@@ -420,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _user: {fileID: 4299033421266652203}
-  _playerBody: {fileID: 0}
+  _playerBody: {fileID: 4299033421255644920}
   _transport: {fileID: 0}
 --- !u!50 &4299033421266652212
 Rigidbody2D:
@@ -430,7 +417,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4299033421266652214}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -456,6 +443,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2267766, y: 1.195497}
-  m_Size: {x: 1.4535532, y: 2.390994}
+  m_Offset: {x: -0.2267766, y: 1.1393524}
+  m_Size: {x: 1.4535532, y: 2.5032833}
   m_Direction: 0

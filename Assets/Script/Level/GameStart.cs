@@ -8,28 +8,31 @@ public class GameStart : MonoBehaviour
     [SerializeField] private CameraHolder _holder;
     [SerializeField] private Player _player;
     [SerializeField] private MapBulder _maps;
+    [SerializeField] private JumpScore _score;
 
     private Vector3 _startPosition;
 
     private void Awake()
     {
         _player.SetBlock(true);
-        Play();
         _startPosition = _player.transform.position;
+        Play();
     }
 
     private void Play()
     {
-        _player.Play();
+        _player.transform.position = _startPosition;
         _player.Reset();
+        _score.Reset();
         _holder.enabled = true;
+        _player.Play();
         _maps.Play();
     }
 
     private void Stop()
     {
-        _player.Stop();
         _holder.enabled = false;
+        _player.Stop();
         _maps.Stop();
     }
 
@@ -42,7 +45,6 @@ public class GameStart : MonoBehaviour
     public void Restart()
     {
         _holder.SetHeight(_startPosition.y);
-        _player.transform.position = _startPosition;
         _deadMenu.Hide();
         _player.SetBlock(false);
         Play();
@@ -60,7 +62,6 @@ public class GameStart : MonoBehaviour
         _menu.Show();
         _deadMenu.Hide();
         _holder.SetHeight(_startPosition.y);
-        _player.transform.position = _startPosition;
         Play();
     }
 }

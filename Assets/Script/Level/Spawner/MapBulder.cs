@@ -15,6 +15,7 @@ public class MapBulder : MonoBehaviour
     [SerializeField] private SpawnAddition[] _spawners;
     [Header("Reference")]
     [SerializeField] private Player _player;
+    [SerializeField] private JumpScore _score;
 
     private float _curretHeaight;
 
@@ -106,7 +107,7 @@ public class MapBulder : MonoBehaviour
 
     private PoolItem CreatePlatform()
     {
-        var platform = _poolHolder.GetPool(_player.Height).
+        var platform = _poolHolder.GetPool(_score.CurreHeight).
             Create(transform);
         platform.OnDelete += DeleteJumpPlatform;
         _platforms.Add(platform);
