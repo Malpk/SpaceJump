@@ -35,7 +35,7 @@ public class Pool : MonoBehaviour
     private void AddPool(PoolItem item)
     {
         item.OnDelete -= AddPool;
-        item.transform.parent = transform;
+        item.transform.SetParent(transform);
         item.gameObject.SetActive(false);
         item.transform.localPosition = Vector3.zero;
     }

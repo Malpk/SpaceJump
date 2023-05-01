@@ -14,6 +14,7 @@ public class BoosterItem : MonoBehaviour
                 _booster.gameObject.SetActive(true);
                 _booster.transform.parent = null;
                 _booster.OnComplite += Complite;
+                transform.parent = null;
                 gameObject.SetActive(false);
                 set.Enter(_booster);
             }
