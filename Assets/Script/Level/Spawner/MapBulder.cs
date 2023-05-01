@@ -3,14 +3,16 @@ using UnityEngine;
 
 public class MapBulder : MonoBehaviour
 {
+    [SerializeField] private float _spawnAdditionProbility;
     [SerializeField] private float _startHeight = -3;
     [SerializeField] private float _spawnDistance = 3f;
     [SerializeField] private float _heightSteap = 6f;
     [SerializeField] private float _deleteDistance = 5f;
+    [Header("SpawnerReference")]
+    [SerializeField] private Vector2 _heightOffset;
     [SerializeField] private SpawnPoint[] _offsetsX;
     [SerializeField] private ItemHolder _poolHolder;
-    [SerializeField] private EnemySpawner _spawner;
-    [SerializeField] private Vector2 _heightOffset;
+    [SerializeField] private SpawnAddition[] _spawners;
     [Header("Reference")]
     [SerializeField] private Player _player;
 
@@ -33,7 +35,10 @@ public class MapBulder : MonoBehaviour
         enabled = true;
         _curretHeaight = 0f;
         _curretHeaight = _startHeight;
-        _spawner.Clear();
+        foreach (var spawner in _spawners)
+        {
+            spawner.Clear();
+        }
         while (_platforms.Count > 0)
         {
             _platforms[0].Delete();
@@ -58,8 +63,45 @@ public class MapBulder : MonoBehaviour
                 platform.transform.position = GetPosition(range);
                 list.Add(platform);
             }
-            _spawner.Spawn(list,(int)_curretHeaight);
+            SpawnAddition(list);
         }
+    }
+
+    private bool SpawnAddition(List<PoolItem> platforms)
+    {
+        UpdateSapawners();
+        if (TryGetReadySpawners(out List<SpawnAddition> spawns))
+        {
+            var probility = Random.Range(0f, 1f);
+            if (probility <= _spawnAdditionProbility)
+            {
+                spawns[Random.Range(0, spawns.Count)].
+                    Spawn(platforms, (int)_curretHeaight);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void UpdateSapawners()
+    {
+        foreach (var spawner in _spawners)
+        {
+            spawner.UpdateState();
+        }
+    }
+
+    private bool TryGetReadySpawners(out List<SpawnAddition> list)
+    {
+        list = new List<SpawnAddition>();
+        foreach (var spawn in _spawners)
+        {
+            if (spawn.IsReady)
+            {
+                list.Add(spawn);
+            }
+        }
+        return list.Count > 0;
     }
 
     private PoolItem CreatePlatform()

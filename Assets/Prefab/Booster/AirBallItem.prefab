@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7268992046988131499}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.59, z: 0}
   m_LocalScale: {x: 1.8397, y: 1.8397, z: 1.8397}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.55463403, g: 0.24905658, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e2e0cb36fdac8b04dbf9676bcdb04bcc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -93,8 +93,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7268992048399738842}
-  - component: {fileID: 7268992048399738843}
   - component: {fileID: 7268992048399738844}
+  - component: {fileID: 436439296997813045}
   - component: {fileID: 7268992048399738845}
   m_Layer: 0
   m_Name: AirBallItem
@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7268992048399738840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.33, y: 6.12, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -120,19 +120,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7268992048399738843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7268992048399738840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1125801ddcd1219498005afbefacb50d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _booster: {fileID: 7268992048002478744}
 --- !u!114 &7268992048399738844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +132,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd4920ebb2fb084199b9833faaa7dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &436439296997813045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7268992048399738840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1125801ddcd1219498005afbefacb50d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _booster: {fileID: 7268992048002478744}
+  _poolItem: {fileID: 7268992048399738844}
 --- !u!61 &7268992048399738845
 BoxCollider2D:
   m_ObjectHideFlags: 0

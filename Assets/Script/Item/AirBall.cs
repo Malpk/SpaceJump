@@ -9,8 +9,9 @@ public class AirBall : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidBody;
 
     private float _progress = 0f;
-    private Vector3 _startScale;
-    
+    private Vector3 _startScale = Vector3.one;
+    private Player _curretUser;
+
     public event System.Action OnComplite;
 
     private void OnValidate()
@@ -25,19 +26,25 @@ public class AirBall : MonoBehaviour
         enabled = false;
     }
 
-    public void Use()
+    public void Use(Player user)
     {
         enabled = true;
         _progress = 0f;
-        _startScale = transform.localScale;
+        user.Stop();
+        user.SetBlock(true);
+        user.transform.parent = transform;
+        _curretUser = user;
     }
 
     public void Complite()
     {
+        _curretUser.transform.parent = null;
+        _curretUser.transform.localScale = Vector3.one;
+        _curretUser.Play();
+        _curretUser.SetBlock(false);
+        OnComplite?.Invoke();
         enabled = false;
         gameObject.SetActive(false);
-        transform.localScale = _startScale;
-        OnComplite?.Invoke();
     }
 
     private void FixedUpdate()

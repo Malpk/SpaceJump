@@ -1,16 +1,10 @@
 using UnityEngine;
 
-[RequireComponent(typeof(PoolItem))]
 public class BoosterItem : MonoBehaviour
 {
     [SerializeField] private AirBall _booster;
+    [SerializeField] private PoolItem _poolItem;
 
-    private PoolItem _poolItem;
-
-    private void Awake()
-    {
-        _poolItem = GetComponent<PoolItem>();
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

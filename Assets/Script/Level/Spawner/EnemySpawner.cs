@@ -1,55 +1,27 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : SpawnAddition
 {
-    [SerializeField] private Vector2 _spawnOffset;
-    [SerializeField] private Pool _enemyPool;
+    [SerializeField] private float _probilitySpawn = 0.1f;
     [SerializeField] private ItemHolder _enemyHolder;
 
-    private bool[] _spawns = new bool[] { true,false, false, false, false, false, false, false };
+    private EnemyMovement _curretSpawn;
 
-    private List<PoolItem> _enemys = new List<PoolItem>();
+    public override bool IsReady => true;
 
-    public void Clear()
+    protected override PoolItem Create(int height)
     {
-        while (_enemys.Count > 0)
-        {
-            _enemys[0].Delete();
-        }
+        var item = _enemyHolder.GetPool(height).Create();
+        _curretSpawn = item.GetComponent<EnemyMovement>();
+        OnPlay += PlaySpawn;
+        return item;
     }
 
-    public void Spawn(List<PoolItem> platforms, int height)
+    private void PlaySpawn()
     {
-        if (_spawns[Random.Range(0, _spawns.Length)])
-        {
-            var item = _enemyHolder.GetPool(height).Create();
-            item.OnDelete += ReturnEnemy;
-            _enemys.Add(item);
-            var enemy = item.GetComponent<EnemyMovement>();
-            enemy.transform.position = GetPosition(platforms) + _spawnOffset;
-            enemy.Play();
-        }
+        OnPlay -= PlaySpawn;
+        _curretSpawn.Play();
+        _curretSpawn = null;
     }
 
-    private Vector2 GetPosition(List<PoolItem> platforms)
-    {
-        if (platforms.Count == 1)
-            return platforms[0].transform.position;
-        Vector2 max = platforms[0].transform.position;
-        for (int i = 1; i < platforms.Count; i++)
-        {
-            if (platforms[i].transform.position.y > max.y)
-            {
-                max = platforms[i].transform.position;
-            }
-        }
-        return max;
-    }
-
-    private void ReturnEnemy(PoolItem enemy)
-    {
-        enemy.OnDelete -= ReturnEnemy;
-        _enemys.Remove(enemy);
-    }
 }

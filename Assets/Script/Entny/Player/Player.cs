@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     [SerializeField] private JumpScore _score;
     [SerializeField] private GravitySet _gravitySet;
     [SerializeField] private PlayerMovement _movement;
-    [SerializeField] private SpriteRenderer _sprite;
 
     private bool _isPlay;
     public int Height => _score.CurreHeight;

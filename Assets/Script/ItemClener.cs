@@ -8,7 +8,8 @@ public class ItemClener : MonoBehaviour
             player.Dead();
         if (collision.TryGetComponent(out PoolItem item))
         {
-            item.Delete();
+            if(item.gameObject.activeSelf)
+                item.Delete();
         }
     }
 }
