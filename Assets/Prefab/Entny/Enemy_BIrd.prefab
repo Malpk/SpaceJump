@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21921a8ac79c6741a3cd62999e32407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deltaSpeed: 0.35
-  _distance: 8
+  _deltaSpeed: 0.2
+  _distance: 20
   _rigidBody: {fileID: 6899542341076141615}
   _spriteRender: {fileID: 6899542340950377022}
 --- !u!114 &6899542341076141600

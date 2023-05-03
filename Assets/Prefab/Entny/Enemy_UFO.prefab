@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21921a8ac79c6741a3cd62999e32407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deltaSpeed: 0.2
-  _distance: 14
+  _deltaSpeed: 0.1
+  _distance: 20
   _rigidBody: {fileID: 2439741297504233301}
   _spriteRender: {fileID: 2439741297881654084}
 --- !u!114 &2439741297504233306

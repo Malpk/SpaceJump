@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59680af5134eeed41a6ec29cafaef37b, type: 3}
   m_Name: DefoutGray
   m_EditorClassIdentifier: 
+  _id: 1
   _price: 0
   _icon: {fileID: 21300000, guid: 7006ec714f5152c47a67dbcceacb8fe4, type: 3}
   _content: {fileID: 21300000, guid: 7006ec714f5152c47a67dbcceacb8fe4, type: 3}

@@ -18,9 +18,12 @@ public class JumpScore : MonoBehaviour
     private float _startPosition;
 
     public int CurreHeight { get; private set; }
+    public int Record { get; private set; }
+
 
     public void Reset()
     {
+        SetRecord(CurreHeight);
         CurreHeight = 0;
         _targetPosition = 0f;
         _score.text = CurreHeight.ToString();
@@ -34,5 +37,11 @@ public class JumpScore : MonoBehaviour
             _targetPosition = curretHeight;
         CurreHeight = (int)Mathf.SmoothDamp(CurreHeight, _targetPosition, ref _velocity, _smooth);
         _score.text = (CurreHeight * _scoreUnit).ToString();
+    }
+
+    public void SetRecord(int record)
+    {
+        if(record > Record)
+            Record = record;
     }
 }
