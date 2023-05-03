@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         _curretState = MoveState;
     }
 
-    public void Jump(float height, float duration)
+    public bool Jump(float height, float duration)
     {
         if (!_isJump)
         {
@@ -45,7 +45,9 @@ public class PlayerMovement : MonoBehaviour
             _onJump.Invoke(_startHeight + height);
             _curretState = MoveJumpState;
             _source.PlayOneShot(_jumpSound);
+            return true;
         }
+        return false;
     }
 
     public void Move(float move)

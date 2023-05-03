@@ -7,9 +7,9 @@ public class Money : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerWallet wallet))
+        if (collision.TryGetComponent(out Player player))
         {
-            wallet.TakeMoney(_moneyCount);
+            player.TakeMoney(_moneyCount);
             _poolItem.Delete();
         }
     }

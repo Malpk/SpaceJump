@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float _jumpDuration;
     [SerializeField] private UnityEvent OnDead;
     [Header("Reference")]
+    [SerializeField] private PlayerSound _sound;
+    [SerializeField] private PlayerWallet _wallet;
     [SerializeField] private GravitySet _gravitySet;
     [SerializeField] private PlayerMovement _movement;
 
@@ -41,6 +43,11 @@ public class Player : MonoBehaviour
         IsPlay = !block;
     }
 
+    public void TakeMoney(int money)
+    {
+        _wallet.TakeMoney(money);
+        _sound.TakeMoney();
+    }
     private void Update()
     {
         if (_distanceSide < Mathf.Abs(transform.position.x))
@@ -60,7 +67,8 @@ public class Player : MonoBehaviour
 
     public void Jump(float height, float duration)
     {
-        _movement.Jump(height, duration);
+        if (_movement.Jump(height, duration))
+            _sound.Jump();
     }
 
     public void Dead()
