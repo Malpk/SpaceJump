@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deltaSpeed: 0.2
-  _distance: 18
+  _distance: 14
   _rigidBody: {fileID: 2439741297504233301}
   _spriteRender: {fileID: 2439741297881654084}
 --- !u!114 &2439741297504233306

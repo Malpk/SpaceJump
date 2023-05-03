@@ -138,6 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4299033421255644921}
   - component: {fileID: 4299033421255644926}
+  - component: {fileID: 3464157810140133668}
   - component: {fileID: 4299033421255644920}
   m_Layer: 0
   m_Name: Body
@@ -227,6 +228,19 @@ MonoBehaviour:
   _gravity: {fileID: 4299033421266652201}
   _rigidBody: {fileID: 4299033421266652212}
   _sprite: {fileID: 4299033421255644920}
+--- !u!114 &3464157810140133668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299033421255644922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b28b18c6bcd8647b783f61c45e4926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _body: {fileID: 4299033421255644920}
 --- !u!212 &4299033421255644920
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -291,6 +305,7 @@ GameObject:
   - component: {fileID: 4299033421266652203}
   - component: {fileID: 4299033421266652201}
   - component: {fileID: 802473031359603418}
+  - component: {fileID: 6155044852865059521}
   - component: {fileID: 4299033421266652212}
   - component: {fileID: 4299033421266652213}
   m_Layer: 0
@@ -409,6 +424,20 @@ MonoBehaviour:
   _user: {fileID: 4299033421266652203}
   _playerBody: {fileID: 4299033421255644920}
   _transport: {fileID: 0}
+--- !u!114 &6155044852865059521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299033421266652214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c80dd544155184f4796a25d1c4a26287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _money: 0
+  _moneyText: {fileID: 0}
 --- !u!50 &4299033421266652212
 Rigidbody2D:
   serializedVersion: 4

@@ -3,6 +3,7 @@ using TMPro;
 
 public class JumpScore : MonoBehaviour
 {
+    [SerializeField] private int _scoreUnit;
     [SerializeField] private float _nightHeight;
     [SerializeField] private Color _dayColor;
     [SerializeField] private Color _nightColor;
@@ -32,6 +33,6 @@ public class JumpScore : MonoBehaviour
         if (curretHeight > _targetPosition)
             _targetPosition = curretHeight;
         CurreHeight = (int)Mathf.SmoothDamp(CurreHeight, _targetPosition, ref _velocity, _smooth);
-        _score.text = CurreHeight.ToString();
+        _score.text = (CurreHeight * _scoreUnit).ToString();
     }
 }
