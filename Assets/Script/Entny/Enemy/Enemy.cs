@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+[RequireComponent(typeof(PoolItem))]
+public class Enemy : MonoBehaviour, IMapItem
 {
     [SerializeField] private float _deltaSpeed;
     [SerializeField] private float _distance;
@@ -12,6 +13,12 @@ public class EnemyMovement : MonoBehaviour
     private int[] _directions = new int[] { -1, 1 };
     private float _trigerDitance = 0.05f; 
     private Vector2 _targetPosition;
+    private PoolItem _item;
+
+    private void Awake()
+    {
+        _item = GetComponent<PoolItem>();
+    }
 
     public void Play()
     {
@@ -49,5 +56,10 @@ public class EnemyMovement : MonoBehaviour
         {
             player.Dead();
         }
+    }
+
+    public void Delete()
+    {
+        _item.Delete();
     }
 }

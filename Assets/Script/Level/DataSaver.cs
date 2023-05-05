@@ -39,7 +39,7 @@ public class DataSaver : MonoBehaviour
     {
         var data = new PlayerData();
         data.Money = _wallet.Money;
-        data.Record = _jumpScore.Record;
+        data.Record = _jumpScore.GetRecord();
         data.MusicSetting = _setting.Save();
         data.BuyContent = _playerContent.Save();
         return JsonUtility.ToJson(data);

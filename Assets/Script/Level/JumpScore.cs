@@ -11,22 +11,21 @@ public class JumpScore : MonoBehaviour
     [SerializeField] private Camera _camera;
     [SerializeField] private Player _player;
     [SerializeField] private TextMeshProUGUI _score;
-    [SerializeField] private TextMeshProUGUI _record;
+    [SerializeField] private TextMeshProUGUI _recordText;
 
+    private int _record;
     private int _curretScore;
     private float _smooth = 0.5f;
     private float _velocity;
     private float _targetPosition;
     private float _startPosition;
 
-
-    public int Record { get; private set; }
     public int CurreHeight { get; private set; } = 0;
 
 
     public void Reset()
     {
-        SetRecord(CurreHeight);
+        SetRecord((int)_targetPosition);
         CurreHeight = 0;
         _targetPosition = 0f;
         _score.text = CurreHeight.ToString();
@@ -54,10 +53,15 @@ public class JumpScore : MonoBehaviour
 
     public void SetRecord(int record)
     {
-        if (record > Record)
+        if (record > _record)
         {
-            Record = record;
-            _record.text = record.ToString();
+            _record = record;
+            _recordText.text = record.ToString();
         }
+    }
+
+    public int GetRecord()
+    {
+        return _record > _targetPosition ? _record : (int)_targetPosition;
     }
 }

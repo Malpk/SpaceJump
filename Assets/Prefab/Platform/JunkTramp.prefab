@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4226833799407876497}
   - component: {fileID: 6332573175531770818}
   - component: {fileID: 6347135674819261934}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,6 +167,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd4920ebb2fb084199b9833faaa7dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClear:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 572582476345846095}
+        m_TargetAssemblyTypeName: JumpPlatform, Assembly-CSharp
+        m_MethodName: DeleteContent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &6502018770977755260
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -259,6 +274,10 @@ PrefabInstance:
     - target: {fileID: 1782730820969931266, guid: 6c57bbe4ca6be2d47994162da7a56b68, type: 3}
       propertyPath: m_Name
       value: Batut
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782730820969931266, guid: 6c57bbe4ca6be2d47994162da7a56b68, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2890151379715291039, guid: 6c57bbe4ca6be2d47994162da7a56b68, type: 3}
       propertyPath: m_SortingOrder

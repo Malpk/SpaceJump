@@ -47,6 +47,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd4920ebb2fb084199b9833faaa7dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClear:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 950583084929832509}
+        m_TargetAssemblyTypeName: JumpPlatform, Assembly-CSharp
+        m_MethodName: DeleteContent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &950583084929832509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +112,7 @@ GameObject:
   - component: {fileID: 4940992633792867672}
   - component: {fileID: 371952651513831355}
   - component: {fileID: 6675959715297344446}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,6 +274,10 @@ PrefabInstance:
     - target: {fileID: 1782730820969931266, guid: 6c57bbe4ca6be2d47994162da7a56b68, type: 3}
       propertyPath: m_Name
       value: Trampoline_red
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782730820969931266, guid: 6c57bbe4ca6be2d47994162da7a56b68, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c57bbe4ca6be2d47994162da7a56b68, type: 3}

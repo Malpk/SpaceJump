@@ -7,7 +7,7 @@ public class GameStart : MonoBehaviour
     [SerializeField] private UIMenu _deadMenu;
     [SerializeField] private CameraHolder _holder;
     [SerializeField] private Player _player;
-    [SerializeField] private MapBulder _maps;
+    [SerializeField] private MainSpawner _maps;
     [SerializeField] private JumpScore _score;
 
     private Vector3 _startPosition;

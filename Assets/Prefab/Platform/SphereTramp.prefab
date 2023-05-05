@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8151645979543982860}
   - component: {fileID: 655743145678240092}
   - component: {fileID: 2985481326733493236}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Balloon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,6 +167,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd4920ebb2fb084199b9833faaa7dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClear:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3683536664571463987}
+        m_TargetAssemblyTypeName: JumpPlatform, Assembly-CSharp
+        m_MethodName: DeleteContent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &1768079019196090946
 BoxCollider2D:
   m_ObjectHideFlags: 0
