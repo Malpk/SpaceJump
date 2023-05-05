@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource _source;
     [SerializeField] private GravitySet _gravity;
     [SerializeField] private Rigidbody2D _rigidBody;
-    [SerializeField] private SpriteRenderer _sprite;
 
     private bool _isJump;
     private float _jumpDuration = 1f;
@@ -52,10 +51,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(float move)
     {
-        if (move != 0)
-        {
-            _sprite.flipX = move > 0;
-        }
         _curretState(move);
     }
 

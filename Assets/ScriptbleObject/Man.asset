@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Man
   m_EditorClassIdentifier: 
   _id: 6
-  _price: 0
+  _price: 100
   _icon: {fileID: 1694487238, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
-  _content: {fileID: 1694487238, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
+  _content: {fileID: 1272247765155760139, guid: 577e56ddf766dcd4daf1a55128587f4d, type: 3}

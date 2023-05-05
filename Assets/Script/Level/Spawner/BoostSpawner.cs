@@ -7,7 +7,6 @@ public class BoostSpawner : SpawnAddition
 
     private List<Pool> _pools;
 
-    public override bool IsReady => _pools.Count > 0;
 
     private void OnEnable()
     {
@@ -46,4 +45,8 @@ public class BoostSpawner : SpawnAddition
         }
     }
 
+    public override bool IsReady(int height)
+    {
+        return _pools.Count > 0;
+    }
 }

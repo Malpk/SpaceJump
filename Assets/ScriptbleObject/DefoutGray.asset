@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DefoutGray
   m_EditorClassIdentifier: 
   _id: 4
-  _price: 0
+  _price: 10
   _icon: {fileID: 288804129, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
-  _content: {fileID: 288804129, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
+  _content: {fileID: 5384484493381456555, guid: cfb45bbfb12510e4d968c69dc4f3bcfa, type: 3}

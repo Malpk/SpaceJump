@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: King
   m_EditorClassIdentifier: 
   _id: 5
-  _price: 0
+  _price: 100
   _icon: {fileID: -1416595311, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
-  _content: {fileID: -1416595311, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
+  _content: {fileID: 4789873676820997244, guid: ff55451b4abde8240a8882ccf7f493b2, type: 3}

@@ -39,7 +39,6 @@ public class GameStart : MonoBehaviour
     public void StartGame()
     {
         _player.SetBlock(false);
-        _menu.Hide();
     }
 
     public void Restart()

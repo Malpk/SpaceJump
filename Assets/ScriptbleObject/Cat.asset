@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Cat
   m_EditorClassIdentifier: 
   _id: 0
-  _price: 0
+  _price: 100
   _icon: {fileID: -83743198, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
-  _content: {fileID: -83743198, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
+  _content: {fileID: 7519269893701895806, guid: 033c82e586bd8624285e6effe850b35b, type: 3}

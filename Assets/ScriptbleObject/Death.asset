@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Death
   m_EditorClassIdentifier: 
   _id: 2
-  _price: 0
+  _price: 100
   _icon: {fileID: -1553541135, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
-  _content: {fileID: -1553541135, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
+  _content: {fileID: 9060341879564035837, guid: 519a069f3fa86a74185115554b77c2eb, type: 3}

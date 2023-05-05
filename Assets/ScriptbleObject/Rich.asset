@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Rich
   m_EditorClassIdentifier: 
   _id: 7
-  _price: 0
+  _price: 100
   _icon: {fileID: -127540489, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
-  _content: {fileID: -127540489, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
+  _content: {fileID: 7738076750124436892, guid: 52c7d3700cf3b6444be8486bfc963283, type: 3}

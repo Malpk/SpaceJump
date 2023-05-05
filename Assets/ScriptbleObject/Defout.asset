@@ -15,4 +15,4 @@ MonoBehaviour:
   _id: 3
   _price: 0
   _icon: {fileID: -632290122, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
-  _content: {fileID: -632290122, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
+  _content: {fileID: 2951286881117707192, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}

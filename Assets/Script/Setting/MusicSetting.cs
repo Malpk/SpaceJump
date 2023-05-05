@@ -9,6 +9,12 @@ public class MusicSetting : MonoBehaviour
 
     private SettingData _setting;
 
+    private void Start()
+    {
+        _volumeSlider.UpdateVolume();
+        _musicSlider.UpdateVolume();
+    }
+
     public void UpdateSetting()
     {
         _generalSlider.value = _setting.General;

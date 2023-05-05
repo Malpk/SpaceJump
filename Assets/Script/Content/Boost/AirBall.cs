@@ -6,10 +6,10 @@ public class AirBall : MonoBehaviour
     [SerializeField] private float _upSpeed = 1f;
     [SerializeField] private float _moveSpeed = 5f;
     [Header("Reference")]
+    [SerializeField] private Transform _body;
     [SerializeField] private Rigidbody2D _rigidBody;
 
     private float _progress = 0f;
-    private Vector3 _startScale = Vector3.one;
     private Player _curretUser;
 
     public event System.Action OnComplite;
@@ -28,22 +28,21 @@ public class AirBall : MonoBehaviour
 
     public void Use(Player user)
     {
-        enabled = true;
         _progress = 0f;
         user.Stop();
         user.SetBlock(true);
-        user.transform.parent = transform;
+        user.transform.SetParent(transform);
         _curretUser = user;
+        enabled = true;
     }
 
     public void Complite()
     {
+        enabled = false;
         _curretUser.transform.parent = null;
-        _curretUser.transform.localScale = Vector3.one;
         _curretUser.Play();
         _curretUser.SetBlock(false);
         OnComplite?.Invoke();
-        enabled = false;
         gameObject.SetActive(false);
     }
 
@@ -63,9 +62,8 @@ public class AirBall : MonoBehaviour
         _rigidBody.MovePosition(_rigidBody.position + move * Time.fixedDeltaTime);
         if (direction != 0)
         {
-            var directionInt = direction > 0 ? 1 : -1;
-            transform.localScale = new Vector3(_startScale.x * directionInt,
-                _startScale.y, _startScale.z);
+            var x = direction > 0 ? -1 : 1;
+            transform.localScale = new Vector3(x, transform.localScale.y, transform.localScale.z);
         }
     }
 }

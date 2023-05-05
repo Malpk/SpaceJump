@@ -97,7 +97,7 @@ public class MapBulder : MonoBehaviour
         list = new List<SpawnAddition>();
         foreach (var spawn in _spawners)
         {
-            if (spawn.IsReady)
+            if (spawn.IsReady((int)_curretHeaight))
             {
                 list.Add(spawn);
             }

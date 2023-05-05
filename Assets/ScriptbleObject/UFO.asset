@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: UFO
   m_EditorClassIdentifier: 
   _id: 8
-  _price: 0
+  _price: 100
   _icon: {fileID: 857729322, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
-  _content: {fileID: 857729322, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
+  _content: {fileID: 5650384694848319380, guid: 282960ae3ba324c488026656f41cf9c7, type: 3}

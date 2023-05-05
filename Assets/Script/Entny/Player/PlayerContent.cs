@@ -10,9 +10,9 @@ public class PlayerContent : MonoBehaviour
 
     public ContentData ChooseContent { get; private set; }
 
-    private void Awake()
+    private void Start()
     {
-        if(_contents.Count > 0)
+        if (!ChooseContent)
             ChooseContent = _contents[0];
     }
 
@@ -38,9 +38,14 @@ public class PlayerContent : MonoBehaviour
         if (!_contents.Contains(content))
             _contents.Add(content);
     }
-    public bool Contain(ContentData content)
+    public bool Contain(ContentData target)
     {
-        return _contents.Contains(content);
+        foreach (var content in _contents)
+        {
+            if (content.ID == target.ID)
+                return true;
+        }
+        return false;
     }
 
     public string Save()

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: China
   m_EditorClassIdentifier: 
   _id: 1
-  _price: 0
+  _price: 100
   _icon: {fileID: 369701126, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
-  _content: {fileID: 369701126, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
+  _content: {fileID: 2333188348395895426, guid: d32f2e829a12f3d4488d76d6c970a7e6, type: 3}

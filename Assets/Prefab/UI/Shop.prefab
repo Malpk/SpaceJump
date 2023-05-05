@@ -457,6 +457,7 @@ MonoBehaviour:
   _left: {fileID: 3419284941911155134}
   _right: {fileID: 3419284941411776396}
   _center: {fileID: 5882263275976060063}
+  _price: {fileID: 8687470499244593528}
   _shopButtons: {fileID: 3928425119778486920}
 --- !u!1 &3928425119632389308
 GameObject:
@@ -705,6 +706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3928425119778486921}
   - component: {fileID: 3928425119778486920}
+  - component: {fileID: 8687470499244593528}
   m_Layer: 5
   m_Name: ButtonSwicher
   m_TagString: Untagged
@@ -750,6 +752,21 @@ MonoBehaviour:
   _selectWarning: {fileID: 3928425119948262717}
   _buyButton: {fileID: 3928425120542866381}
   _selectButton: {fileID: 3928425119895590593}
+--- !u!114 &8687470499244593528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3928425119778486966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4629303e9e976834c8360228812cf39b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefix: "\u041A\u0443\u043F\u0438\u0442\u044C \u0437\u0430: "
+  _extens: "\u0420"
+  _text: {fileID: 3928425120874450204}
 --- !u!1 &3928425119860378117
 GameObject:
   m_ObjectHideFlags: 0

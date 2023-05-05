@@ -4,14 +4,13 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
     [SerializeField] private bool _playOnStart;
-    [SerializeField] private float _distanceSide;
     [SerializeField] private float _JumpHeight;
     [SerializeField] private float _jumpDuration;
     [SerializeField] private UnityEvent OnDead;
     [Header("Reference")]
+    [SerializeField] private GravitySet _gravitySet;
     [SerializeField] private PlayerSound _sound;
     [SerializeField] private PlayerWallet _wallet;
-    [SerializeField] private GravitySet _gravitySet;
     [SerializeField] private PlayerMovement _movement;
 
     public bool IsPlay { get; private set; }
@@ -48,23 +47,23 @@ public class Player : MonoBehaviour
         _wallet.TakeMoney(money);
         _sound.TakeMoney();
     }
-    private void Update()
-    {
-        if (_distanceSide < Mathf.Abs(transform.position.x))
-        {
-            var direction = -transform.position.x / Mathf.Abs(transform.position.x);
-            transform.position = new Vector2(direction * (_distanceSide - 1), transform.position.y);
-        }
-    }
-    
+
     private void FixedUpdate()
     {
         var x = IsPlay ? Input.GetAxis("Horizontal") : 0;
         _movement.Move(x);
-        if(_gravitySet.IsGround)
+        SetDirection(x);
+        if (_gravitySet.IsGround)
             Jump(_JumpHeight, _jumpDuration);
     }
-
+    public void SetDirection(float direction)
+    {
+        if (direction != 0)
+        {
+            var x = direction > 0 ? -1 : 1;
+            transform.localScale = new Vector3(x, transform.localScale.y, transform.localScale.z);
+        }
+    }
     public void Jump(float height, float duration)
     {
         if (_movement.Jump(height, duration))
