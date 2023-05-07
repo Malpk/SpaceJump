@@ -7,6 +7,17 @@ public class ItemHolder : MonoBehaviour
 
     public Pool GetPool(int height)
     {
+        if (height >= _sets[0].SpawnHeight)
+        {
+            var list = GetPools(height);
+            return list.Count > 0 ? list[Random.Range(0, list.Count)] :
+                _sets[_sets.Length - 1].Pool;
+        }
+        return null;
+    }
+
+    private List<Pool> GetPools(int height)
+    {
         var list = new List<Pool>();
         foreach (var set in _sets)
         {
@@ -15,7 +26,6 @@ public class ItemHolder : MonoBehaviour
                 list.Add(set.Pool);
             }
         }
-        return list.Count > 0 ? list[Random.Range(0, list.Count)] : 
-            _sets[_sets.Length - 1].Pool;
+        return list;
     }
 }

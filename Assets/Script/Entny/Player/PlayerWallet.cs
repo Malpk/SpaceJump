@@ -3,31 +3,26 @@ using UnityEngine;
 public class PlayerWallet : MonoBehaviour
 {
     [SerializeField] private int _money;
-<<<<<<< Updated upstream
-    [SerializeField] private IntText _moneyText;
-=======
     [SerializeField] private IntText[] _moneyTexts;
 
-    public event System.Action<int> OnTakeMoney;
-
     public int Money => _money;
->>>>>>> Stashed changes
 
     private void OnValidate()
     {
-        if (_moneyText)
-            _moneyText.SetText(_money);
+        if (_moneyTexts.Length > 0)
+            UpdateUI();
+    }
+
+    public void SetMoney(int money)
+    {
+        _money = money;
+        UpdateUI();
     }
 
     public void TakeMoney(int money)
     {
         _money += money;
-<<<<<<< Updated upstream
-        _moneyText.SetText(_money);
-=======
         UpdateUI();
-        OnTakeMoney?.Invoke(money);
->>>>>>> Stashed changes
     }
 
     public bool GiveMoney(int money)
@@ -35,9 +30,18 @@ public class PlayerWallet : MonoBehaviour
         if (_money - money >= 0)
         {
             _money -= money;
-            _moneyText.SetText(_money);
+            UpdateUI();
             return true;
         }
         return false;
+    }
+
+    private void UpdateUI()
+    {
+        foreach (var text in _moneyTexts)
+        {
+            if(text)
+                text.SetText(_money);
+        }
     }
 }

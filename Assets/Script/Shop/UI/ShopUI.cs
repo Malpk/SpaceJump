@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class ShopUI : MonoBehaviour
@@ -8,6 +9,7 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private ShopCellUI _left;
     [SerializeField] private ShopCellUI _right;
     [SerializeField] private ShopCellUI _center;
+    [SerializeField] private PrefixText _price;
     [SerializeField] private ShopButtons _shopButtons;
 
     private void Start()
@@ -67,6 +69,7 @@ public class ShopUI : MonoBehaviour
             }
             else
             {
+                _price.SetText(_center.Content.Price.ToString());
                 _shopButtons.UpdateState(ContentState.NotBuy);
             }
         }

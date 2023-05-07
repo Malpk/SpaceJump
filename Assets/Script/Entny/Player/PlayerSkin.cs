@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class PlayerSkin : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _body;
+    [SerializeField] private GameObject _body;
 
-    public void SetSkin(Sprite skin)
+    private float _scaleX;
+
+    public bool FlipX => transform.localScale.x < 0;
+
+    public void SetSkin(GameObject skin)
     {
-        _body.sprite = skin;
+        Destroy(_body);
+        _body = Instantiate(skin,transform);
+        _scaleX = _body.transform.localScale.x;
+        _body.transform.localPosition = Vector3.zero;
     }
 }

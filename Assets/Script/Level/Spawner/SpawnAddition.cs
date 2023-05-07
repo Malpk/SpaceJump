@@ -11,9 +11,10 @@ public abstract class SpawnAddition : MonoBehaviour
     protected event System.Action OnReset;
     protected event System.Action OnUpdate;
 
-    public abstract bool IsReady { get; }
+    public abstract bool IsReady(int height);
 
     protected abstract PoolItem Create(int height);
+
     public void UpdateState()
     {
         OnUpdate?.Invoke();

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2439741297504233306}
   - component: {fileID: 2439741297504233301}
   - component: {fileID: 2439741297504233302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_UFO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21921a8ac79c6741a3cd62999e32407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deltaSpeed: 0.2
-  _distance: 14
+  _deltaSpeed: 0.1
+  _distance: 20
   _rigidBody: {fileID: 2439741297504233301}
   _spriteRender: {fileID: 2439741297881654084}
 --- !u!114 &2439741297504233306
@@ -64,6 +64,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd4920ebb2fb084199b9833faaa7dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClear:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &2439741297504233301
 Rigidbody2D:
   serializedVersion: 4
@@ -122,7 +125,7 @@ GameObject:
   - component: {fileID: 2439741297881654091}
   - component: {fileID: 2439741297881654084}
   - component: {fileID: 8603101463945810962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

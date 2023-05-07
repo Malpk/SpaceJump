@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6899542340950377009}
   - component: {fileID: 6899542340950377022}
   - component: {fileID: 684531543236506984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 6899542341076141600}
   - component: {fileID: 6899542341076141615}
   - component: {fileID: 6899542341076141612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_BIrd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21921a8ac79c6741a3cd62999e32407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deltaSpeed: 0.35
-  _distance: 8
+  _deltaSpeed: 0.2
+  _distance: 20
   _rigidBody: {fileID: 6899542341076141615}
   _spriteRender: {fileID: 6899542340950377022}
 --- !u!114 &6899542341076141600
@@ -170,6 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd4920ebb2fb084199b9833faaa7dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClear:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &6899542341076141615
 Rigidbody2D:
   serializedVersion: 4

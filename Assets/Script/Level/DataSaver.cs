@@ -1,12 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Runtime.InteropServices;
 
 public class DataSaver : MonoBehaviour
 {
-<<<<<<< Updated upstream
-=======
     [SerializeField] private string _saveKey = "key";
     [Header("Reference")]
     [SerializeField] private JumpScore _jumpScore;
@@ -15,13 +10,6 @@ public class DataSaver : MonoBehaviour
     [SerializeField] private PlayerContent _playerContent;
 
     private string _data;
-
-
-    [DllImport("__Internal")]
-    private static extern void SaveExtern(string data);
-
-    [DllImport("__Internal")]
-    private static extern void LoadExtern();
 
     private void Awake()
     {
@@ -34,23 +22,17 @@ public class DataSaver : MonoBehaviour
     public void Save()
     {
         _data = GetData();
-#if UNITY_WEBGL && !UNITY_EDITOR
-        SaveExtern(_data);
-#else
         PlayerPrefs.SetString(_saveKey, _data);
-#endif
     }
 
-    private void Load()
+    public void Load()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        LoadExtern();
-#else
         if (PlayerPrefs.HasKey(_saveKey))
         {
-            SetData(PlayerPrefs.GetString(_saveKey));
+            var data = JsonUtility.FromJson
+                <PlayerData>(PlayerPrefs.GetString(_saveKey));
+            SetData(data);
         }
-#endif
     }
 
     private string GetData()
@@ -63,13 +45,11 @@ public class DataSaver : MonoBehaviour
         return JsonUtility.ToJson(data);
     }
 
-    public void SetData(string json)
+    private void SetData(PlayerData data)
     {
-        var data = JsonUtility.FromJson<PlayerData>(json);
         _wallet.SetMoney(data.Money);
         _setting.Load(data.MusicSetting);
         _jumpScore.SetRecord(data.Record);
         _playerContent.Load(data.BuyContent);
     }
->>>>>>> Stashed changes
 }

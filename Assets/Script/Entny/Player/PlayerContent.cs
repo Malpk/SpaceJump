@@ -6,12 +6,13 @@ public class PlayerContent : MonoBehaviour
     [SerializeField] private PlayerSkin _player;
     [SerializeField] private PlayerWallet _playerWallet;
     [SerializeField] private List<ContentData> _contents;
+    [SerializeField] private DataHolder _dataHolder;
 
     public ContentData ChooseContent { get; private set; }
 
-    private void Awake()
+    private void Start()
     {
-        if(_contents.Count > 0)
+        if (!ChooseContent)
             ChooseContent = _contents[0];
     }
 
@@ -37,8 +38,37 @@ public class PlayerContent : MonoBehaviour
         if (!_contents.Contains(content))
             _contents.Add(content);
     }
-    public bool Contain(ContentData content)
+    public bool Contain(ContentData target)
     {
-        return _contents.Contains(content);
+        foreach (var content in _contents)
+        {
+            if (content.ID == target.ID)
+                return true;
+        }
+        return false;
+    }
+
+    public string Save()
+    {
+        var data = new PlayerContentData();
+        data.ChooseContent = ChooseContent ? ChooseContent.ID : -1;
+        data.Contens = new int[_contents.Count];
+        for (int i = 0; i < _contents.Count; i++)
+        {
+            data.Contens[i] = _contents[i].ID;
+        }
+        return JsonUtility.ToJson(data);
+    }
+
+    public void Load(string dataString)
+    {
+        var data = JsonUtility.FromJson<PlayerContentData>(dataString);
+        if (_dataHolder.TryGetContent(data.ChooseContent, out ContentData choose))
+            Select(choose);
+        foreach (var ID in data.Contens)
+        {
+            if (_dataHolder.TryGetContent(ID, out ContentData content))
+                AddContent(content);
+        }
     }
 }

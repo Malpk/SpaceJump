@@ -49,11 +49,6 @@ public class MainSpawner : MonoBehaviour
         return false;
     }
 
-    public Vector3 GetPlatformPosition(Vector3 position)
-    {
-        return _mapBuilder.GetPlatformPosition(position);
-    }
-
     private void UpdateSapawners()
     {
         foreach (var spawner in _spawners)

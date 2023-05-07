@@ -293,25 +293,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fbde7cd4f8c84148acb35ab245f73a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnAdditionProbility: 0
   _startHeight: -3
-  _spawnDistance: 50
   _heightSteap: 3
-  _deleteDistance: 5
+  _mapRadius: 20
+  _jumpDistance: 10
+  _spawnDistance: 50
   _heightOffset: {x: 0, y: 1}
   _offsetsX:
-  - _rangsPosition:
-    - {x: -5, y: 5.5}
-    - {x: -14, y: -7.5}
-  - _rangsPosition:
-    - {x: -9, y: 9}
-  - _rangsPosition:
-    - {x: -12, y: 6}
-  - _rangsPosition:
-    - {x: 5, y: -5.5}
-    - {x: 14, y: 7.5}
+  - _rangsPosition: []
+  - _rangsPosition: []
+  - _rangsPosition: []
+  - _rangsPosition: []
   _poolHolder: {fileID: 3851351108587152301}
-  _spawners: []
   _player: {fileID: 0}
   _score: {fileID: 0}
 --- !u!114 &3851351108587152301

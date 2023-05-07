@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59680af5134eeed41a6ec29cafaef37b, type: 3}
   m_Name: Defout
   m_EditorClassIdentifier: 
+  _id: 3
   _price: 0
-  _icon: {fileID: 21300000, guid: 45f36c0735ae8bf4fa989740b09c0507, type: 3}
-  _content: {fileID: 21300000, guid: 45f36c0735ae8bf4fa989740b09c0507, type: 3}
+  _icon: {fileID: -632290122, guid: 647ff66ac7fa8d044b6610dd07982112, type: 3}
+  _content: {fileID: 2951286881117707192, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}

@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource _source;
     [SerializeField] private GravitySet _gravity;
     [SerializeField] private Rigidbody2D _rigidBody;
-    [SerializeField] private SpriteRenderer _sprite;
 
     private bool _isJump;
     private float _jumpDuration = 1f;
@@ -33,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         _curretState = MoveState;
     }
 
-    public void Jump(float height, float duration)
+    public bool Jump(float height, float duration)
     {
         if (!_isJump)
         {
@@ -45,15 +44,13 @@ public class PlayerMovement : MonoBehaviour
             _onJump.Invoke(_startHeight + height);
             _curretState = MoveJumpState;
             _source.PlayOneShot(_jumpSound);
+            return true;
         }
+        return false;
     }
 
     public void Move(float move)
     {
-        if (move != 0)
-        {
-            _sprite.flipX = move > 0;
-        }
         _curretState(move);
     }
 
