@@ -3,7 +3,7 @@ using UnityEngine;
 public class MainMenu : UIMenu
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] private GameStart _gameStart;
+    [SerializeField] private PlayerStateSwitcher _gameStart;
 
     public void StartGame()
     {
