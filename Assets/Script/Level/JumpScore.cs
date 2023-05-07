@@ -1,6 +1,6 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 using TMPro;
-
 public class JumpScore : MonoBehaviour
 {
     [SerializeField] private int _scoreUnit;
@@ -22,6 +22,9 @@ public class JumpScore : MonoBehaviour
 
     public int CurreHeight { get; private set; } = 0;
     public int Score => _curretScore;
+
+    [DllImport("__Internal")]
+    private static extern void SetRecordExtern(int score);    
 
     public void Reset()
     {
@@ -56,6 +59,10 @@ public class JumpScore : MonoBehaviour
         if (record > _record)
         {
             _record = record;
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+            SetRecordExtern(record);
+#endif
             _recordText.text = record.ToString();
         }
     }

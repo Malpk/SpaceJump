@@ -31,7 +31,7 @@ public class DataSaver : MonoBehaviour
     {
         _data = GetData();
 #if UNITY_WEBGL && !UNITY_EDITOR
-        LoadExtern();
+        SaveExtern(_data);
 #else
         PlayerPrefs.SetString(_saveKey, _data);
 #endif
@@ -40,13 +40,11 @@ public class DataSaver : MonoBehaviour
     public void Load()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
-        SaveExtern(_data)
+        LoadExtern();
 #else
         if (PlayerPrefs.HasKey(_saveKey))
         {
-            var data = JsonUtility.FromJson
-                <PlayerData>(PlayerPrefs.GetString(_saveKey));
-            SetData(data);
+            SetData(PlayerPrefs.GetString(_saveKey));
         }
 #endif
     }
@@ -61,8 +59,9 @@ public class DataSaver : MonoBehaviour
         return JsonUtility.ToJson(data);
     }
     
-    public void SetData(PlayerData data)
+    public void SetData(string json)
     {
+        var data = JsonUtility.FromJson<PlayerData>(json);
         _wallet.SetMoney(data.Money);
         _setting.Load(data.MusicSetting);
         _jumpScore.SetRecord(data.Record);

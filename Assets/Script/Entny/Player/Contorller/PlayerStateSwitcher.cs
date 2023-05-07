@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerStateSwitcher : MonoBehaviour
 {
     [SerializeField] private Player _player;
+    [SerializeField] private GameSession _session;
     [SerializeField] private MapBulder _map;
     [SerializeField] private CameraHolder _holder;
 
@@ -35,6 +36,7 @@ public class PlayerStateSwitcher : MonoBehaviour
     public void Reset()
     {
         _player.transform.position = _startPosition;
+        _session.Reset();
         _holder.SetHeight(_startPosition.y);
     }
 

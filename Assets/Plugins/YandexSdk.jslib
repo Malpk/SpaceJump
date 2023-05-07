@@ -2,6 +2,7 @@ mergeInto(LibraryManager.library,
 {
 	SaveExtern: function(data)
 	{
+		console.log(UTF8ToString(data));
 		var save = JSON.parse(UTF8ToString(data));
 		player.setData(save);
 	},
@@ -50,5 +51,9 @@ mergeInto(LibraryManager.library,
 				}
 			}
 		})
+	},
+	
+	SetRecordExtern : function(score)
+	{
 	},
 });
