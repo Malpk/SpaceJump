@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerStateSwitcher : MonoBehaviour
 {
     [SerializeField] private Player _player;
+    [SerializeField] private MapBulder _map;
     [SerializeField] private CameraHolder _holder;
 
     private Vector3 _startPosition;
@@ -15,7 +16,6 @@ public class PlayerStateSwitcher : MonoBehaviour
 
     public void Play()
     {
-        _player.transform.position = _startPosition;
         _player.Reset();
         _player.Play();
         _holder.enabled = true;
@@ -34,7 +34,15 @@ public class PlayerStateSwitcher : MonoBehaviour
 
     public void Reset()
     {
+        _player.transform.position = _startPosition;
         _holder.SetHeight(_startPosition.y);
+    }
+
+    public void SetLastPosition()
+    {
+        _player.transform.position = _map.GetPlatform(_player.transform.position)
+            + Vector2.up * 3f;
+        _holder.SetHeight(_player.transform.position.y);
     }
 
 }

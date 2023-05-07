@@ -6,6 +6,7 @@ public class GameStart : MonoBehaviour
     [SerializeField] private DataSaver _saver;
     [SerializeField] private JumpScore _score;
     [SerializeField] private MainSpawner _maps;
+    [SerializeField] private AdsController _ads;
     [SerializeField] private PlayerStateSwitcher _player;
 
     private void Start()
@@ -30,7 +31,16 @@ public class GameStart : MonoBehaviour
     public void Restart()
     {
         _player.Reset();
+        _ads.Reset();
+        _maps.ClearMap();
         Play();
+        _player.StartGame();
+    }
+
+    public void ReturnGame()
+    {
+        Play();
+        _player.SetLastPosition();
         _player.StartGame();
     }
 
@@ -43,6 +53,8 @@ public class GameStart : MonoBehaviour
     public void BackMainMenu()
     {
         _player.Reset();
+        _ads.Reset();
+        _maps.ClearMap();
         Play();
     }
 }

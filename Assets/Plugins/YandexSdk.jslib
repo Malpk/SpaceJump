@@ -25,13 +25,13 @@ mergeInto(LibraryManager.library,
 				  console.log('Video ad open.');
 				},
 				onRewarded: () => {
-				  myGame.SendMessage('YandexSdk', 'Reward');
+				  myGame.SendMessage('GameController', 'Reward');
 				},
 				onClose: () => {
-					myGame.SendMessage('YandexSdk', 'CompliteAds');
+					myGame.SendMessage('GameController', 'CompliteAds');
 				}, 
 				onError: (e) => {
-					myGame.SendMessage('YandexSdk', 'CompliteAds');
+					myGame.SendMessage('GameController', 'CompliteAds');
 				}
 			}
 		})
@@ -43,10 +43,10 @@ mergeInto(LibraryManager.library,
 		{
 			callbacks: {
 				onClose: function(wasShown) {
-					myGame.SendMessage('YandexSdk', 'CompliteAds');
+					myGame.SendMessage('GameController', 'CompliteAds');
 				},
 				onError: function(error) {
-					myGame.SendMessage('YandexSdk', 'CompliteAds');
+					myGame.SendMessage('GameController', 'CompliteAds');
 				}
 			}
 		})

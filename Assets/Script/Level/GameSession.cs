@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour
 {
-    [SerializeField] private YandexSdk _sdk;
     [SerializeField] private PlayerWallet _wallet;
 
     private int _countTakeMoney = 0;
@@ -23,19 +22,13 @@ public class GameSession : MonoBehaviour
     {
         _countTakeMoney = 0;
     }
-    public bool DubleMoneyAds()
+    public void DubleMoney()
     {
-        return _sdk.ShowRewardAds(PutMoney);
+        _wallet.TakeMoney(_countTakeMoney);
     }
     private void UpdateTakeMoney(int money)
     {
         _countTakeMoney += money;
-    }
-
-    private void PutMoney()
-    {
-        _wallet.TakeMoney(_countTakeMoney);
-        _countTakeMoney = 0;
     }
 
 }

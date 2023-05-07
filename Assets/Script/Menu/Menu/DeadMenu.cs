@@ -7,11 +7,10 @@ public class DeadMenu : UIMenu
     [SerializeField] private BordResult _result;
     [SerializeField] private GameSession _session;
 
-    public void ShowDead()
+    public void UpdateBord()
     {
         _result.SetRecord(_score.Score);
         _result.SetMoney(_session.TakeMoney);
-        Show();
     }
 
     public void BackMainMenu()
@@ -22,7 +21,12 @@ public class DeadMenu : UIMenu
 
     public void Restart()
     {
-        ShowMenu(MenuType.HUD);
+        ShowHUD();
         _gameController.Restart();
+    }
+
+    public void ShowHUD()
+    {
+        ShowMenu(MenuType.HUD);
     }
 }

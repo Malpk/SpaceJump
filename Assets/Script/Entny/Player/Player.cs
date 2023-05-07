@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     public bool IsPlay { get; private set; }
 
+
     private void Start()
     {
         if (_playOnStart)
@@ -67,7 +68,9 @@ public class Player : MonoBehaviour
     public void Jump(float height, float duration)
     {
         if (_movement.Jump(height, duration))
+        {
             _sound.Jump();
+        }
     }
 
     public void Dead()

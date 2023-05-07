@@ -8,14 +8,18 @@ public class MainSpawner : MonoBehaviour
     [SerializeField] private MapBulder _mapBuilder;
     [SerializeField] private SpawnAddition[] _spawners;
 
-    public void Play()
+    public void ClearMap()
     {
-        enabled = true;
         _mapBuilder.Clear();
         foreach (var spawner in _spawners)
         {
             spawner.Clear();
         }
+    }
+
+    public void Play()
+    {
+        enabled = true;
     }
 
     public void Stop()

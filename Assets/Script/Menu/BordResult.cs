@@ -8,11 +8,12 @@ public class BordResult : MonoBehaviour
 
     public void SetMoney(int money)
     {
-        _record.SetText(money);
+        _money.SetText(money);
     }
 
     public void SetRecord(int record)
     {
-        _money.SetText(record);
+        _record.SetText(record);
+
     }
 }

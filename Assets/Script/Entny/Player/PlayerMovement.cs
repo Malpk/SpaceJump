@@ -53,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _curretState(move);
     }
-
     private void MoveJumpState(float move)
     {
         _jumpProgress = Mathf.Clamp01(_jumpProgress + 

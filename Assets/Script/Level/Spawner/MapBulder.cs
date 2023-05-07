@@ -47,6 +47,26 @@ public class MapBulder : MonoBehaviour
         return list;
     }
 
+    public Vector2 GetPlatform(Vector2 position)
+    {
+        if (_platforms.Count > 0)
+        {
+            var platformPosition = _platforms[0].transform.position;
+            var distance = Vector2.Distance(position, platformPosition);
+            foreach (var platform in _platforms)
+            {
+                var newDistance = Vector2.Distance(position, platform.transform.position);
+                if (distance > newDistance)
+                {
+                    distance = newDistance;
+                    platformPosition = platform.transform.position;
+                }
+            }
+            return platformPosition;
+        }
+        return Vector2.zero;
+    }
+
     private PoolItem CreatePlatform()
     {
         var platform = _poolHolder.GetPool(_score.CurreHeight).
