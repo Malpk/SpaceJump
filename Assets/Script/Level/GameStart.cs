@@ -3,8 +3,6 @@ using UnityEngine;
 public class GameStart : MonoBehaviour
 {
     [SerializeField] private bool _playOnStart;
-    [SerializeField] private UIMenu _menu;
-    [SerializeField] private UIMenu _deadMenu;
     [SerializeField] private CameraHolder _holder;
     [SerializeField] private Player _player;
     [SerializeField] private MainSpawner _maps;
@@ -44,7 +42,6 @@ public class GameStart : MonoBehaviour
     public void Restart()
     {
         _holder.SetHeight(_startPosition.y);
-        _deadMenu.Hide();
         _player.SetBlock(false);
         Play();
     }
@@ -53,13 +50,10 @@ public class GameStart : MonoBehaviour
     {
         Stop();
         _player.SetBlock(true);
-        _deadMenu.Show();
     }
 
-    public void MainMenu()
+    public void BackMainMenu()
     {
-        _menu.Show();
-        _deadMenu.Hide();
         _holder.SetHeight(_startPosition.y);
         Play();
     }
