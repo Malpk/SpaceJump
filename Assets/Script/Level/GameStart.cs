@@ -3,12 +3,19 @@ using UnityEngine;
 public class GameStart : MonoBehaviour
 {
     [SerializeField] private bool _playOnStart;
+    [SerializeField] private Player _player;
     [SerializeField] private UIMenu _menu;
     [SerializeField] private UIMenu _deadMenu;
+<<<<<<< Updated upstream
     [SerializeField] private CameraHolder _holder;
     [SerializeField] private Player _player;
     [SerializeField] private MapBulder _maps;
+=======
+    [SerializeField] private BoostAds _boostAds;
+>>>>>>> Stashed changes
     [SerializeField] private JumpScore _score;
+    [SerializeField] private MainSpawner _maps;
+    [SerializeField] private CameraHolder _holder;
 
     private Vector3 _startPosition;
 
@@ -22,11 +29,11 @@ public class GameStart : MonoBehaviour
     private void Play()
     {
         _player.transform.position = _startPosition;
-        _player.Reset();
         _score.Reset();
         _holder.enabled = true;
         _player.Play();
         _maps.Play();
+        _boostAds.Reset();
     }
 
     private void Stop()
@@ -40,6 +47,15 @@ public class GameStart : MonoBehaviour
     {
         _player.SetBlock(false);
         _menu.Hide();
+    }
+
+    public void ReturnPlayerGame()
+    {
+        _deadMenu.Hide();
+        _player.Play();
+        _player.SetBlock(false);
+        var platform = _maps.GetPlatformPosition(_player.transform.position);
+        _player.transform.position = platform + Vector3.up * 2;
     }
 
     public void Restart()

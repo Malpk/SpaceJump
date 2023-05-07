@@ -227,6 +227,7 @@ MonoBehaviour:
   _source: {fileID: 612074482}
   _gravity: {fileID: 4299033421266652201}
   _rigidBody: {fileID: 4299033421266652212}
+<<<<<<< Updated upstream
   _sprite: {fileID: 4299033421255644920}
 --- !u!114 &3464157810140133668
 MonoBehaviour:
@@ -293,6 +294,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+=======
+>>>>>>> Stashed changes
 --- !u!1 &4299033421266652214
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +348,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playOnStart: 0
-  _distanceSide: 18
   _JumpHeight: 7
   _jumpDuration: 0.7
   OnDead:
@@ -364,7 +366,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _gravitySet: {fileID: 4299033421266652201}
+<<<<<<< Updated upstream
   _movement: {fileID: 4299033421255644926}
+=======
+  _sound: {fileID: 2003131712196945999}
+  _wallet: {fileID: 219779566}
+  _movement: {fileID: 4568929473817102219}
+>>>>>>> Stashed changes
 --- !u!114 &4299033421266652201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,7 +430,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _user: {fileID: 4299033421266652203}
+<<<<<<< Updated upstream
   _playerBody: {fileID: 4299033421255644920}
+=======
+>>>>>>> Stashed changes
   _transport: {fileID: 0}
 --- !u!114 &6155044852865059521
 MonoBehaviour:
@@ -475,3 +486,77 @@ CapsuleCollider2D:
   m_Offset: {x: -0.2267766, y: 1.1393524}
   m_Size: {x: 1.4535532, y: 2.5032833}
   m_Direction: 0
+<<<<<<< Updated upstream
+=======
+--- !u!1001 &1395042583636544834
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2343682821109005012}
+    m_Modifications:
+    - target: {fileID: 2951286881117707192, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+      propertyPath: m_Name
+      value: Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951286881117707194, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951286881117707195, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951286881117707195, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951286881117707195, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951286881117707195, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951286881117707195, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951286881117707195, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951286881117707195, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951286881117707195, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951286881117707195, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951286881117707195, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951286881117707195, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+--- !u!4 &4299033421255644921 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2951286881117707195, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+  m_PrefabInstance: {fileID: 1395042583636544834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4299033421255644922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2951286881117707192, guid: fcde3b4262ef40f40b8b6b25987a481f, type: 3}
+  m_PrefabInstance: {fileID: 1395042583636544834}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes

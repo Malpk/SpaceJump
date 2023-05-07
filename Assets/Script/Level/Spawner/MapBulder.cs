@@ -45,6 +45,21 @@ public class MapBulder : MonoBehaviour
             _platforms[0].Delete();
         }
     }
+    public Vector3 GetPlatformPosition(Vector3 position)
+    {
+        var platformPosition = _platforms[0].transform.position;
+        var distance = Vector2.Distance(platformPosition, position);
+        foreach (var item in _platforms)
+        {
+            var newDistance = Vector2.Distance(item.transform.position, position);
+            if (newDistance > distance)
+            {
+                platformPosition = item.transform.position;
+                distance = newDistance;
+            }
+        }
+        return platformPosition;
+    }
 
     public void Stop()
     {
@@ -116,11 +131,27 @@ public class MapBulder : MonoBehaviour
 
     private Vector2 GetPosition(Vector2 range)
     {
+<<<<<<< Updated upstream
         _curretHeaight += _heightSteap +
             Random.Range(_heightOffset.x, _heightOffset.y);
         var up = Vector2.up * _curretHeaight;
         var right = Vector2.right * Random.Range(range.x, range.y);
         return up + right;
+=======
+        Height += _heightSteap +
+            (int)Random.Range(_heightOffset.x, _heightOffset.y);
+        var x = Random.Range(range.x, range.y) / (_mapRadius * 2);
+        x *= _jumpDistance * 2;
+        x -= _curretPositionX;
+        x = Mathf.Clamp(x, -_mapRadius, _mapRadius);
+        if (x + _jumpDistance > _mapRadius)
+            _curretPositionX = x - _jumpDistance;
+        else if (x - _jumpDistance < -_mapRadius)
+            _curretPositionX = x + _jumpDistance;
+        else
+            _curretPositionX = x + Random.Range(-_jumpDistance, _jumpDistance);
+        return Vector2.up * Height + Vector2.right * x;
+>>>>>>> Stashed changes
     }
 
     private void DeleteJumpPlatform(PoolItem platform)

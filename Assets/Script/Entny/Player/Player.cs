@@ -22,18 +22,14 @@ public class Player : MonoBehaviour
 
     public void Play()
     {
-        enabled = true; 
+        enabled = true;
+        _gravitySet.Reset();
     }
 
     public void Stop()
     {
         enabled = false;
         _movement.BreakJump();
-    }
-
-    public void Reset()
-    {
-        _gravitySet.Reset();
     }
 
     public void SetBlock(bool block)
