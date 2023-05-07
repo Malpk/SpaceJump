@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 987ec266b0619974198e358ff6627ca8
+guid: b45ad6fb31c6b2f4caf6c2462b95ae28
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Brid_0
+      name: "\u0421ursor_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 47
+        y: 81
+        width: 33
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0f4990120c3c3d428a65c3e3e0c0d5d
-      internalID: 1523311658
+      spriteID: 5f918026488d91141bc05aed79386a29
+      internalID: 338498903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brid_1
+      name: "\u0421ursor_1"
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 47
+        y: 17
+        width: 33
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9cdeba882256054a92b434da3b01a0e
-      internalID: -1501615973
+      spriteID: 2906eac4e1310944a9a8ab7d719505b0
+      internalID: -324989839
       vertices: []
       indices: 
       edges: []
@@ -169,8 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Brid_0: 1523311658
-      Brid_1: -1501615973
+      "\u0421ursor_0": 338498903
+      "\u0421ursor_1": -324989839
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
