@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameStart : MonoBehaviour
 {
     [SerializeField] private bool _playOnStart;
+    [SerializeField] private DataSaver _saver;
     [SerializeField] private JumpScore _score;
     [SerializeField] private MainSpawner _maps;
     [SerializeField] private PlayerStateSwitcher _player;
@@ -36,6 +37,7 @@ public class GameStart : MonoBehaviour
     public void Dead()
     {
         Stop();
+        _saver.Save();
     }
 
     public void BackMainMenu()

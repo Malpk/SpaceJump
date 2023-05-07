@@ -21,7 +21,7 @@ public class JumpScore : MonoBehaviour
     private float _startPosition;
 
     public int CurreHeight { get; private set; } = 0;
-
+    public int Score => _curretScore;
 
     public void Reset()
     {

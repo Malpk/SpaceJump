@@ -5,6 +5,8 @@ public class PlayerWallet : MonoBehaviour
     [SerializeField] private int _money;
     [SerializeField] private IntText[] _moneyTexts;
 
+    public event System.Action<int> OnTakeMoney;
+
     public int Money => _money;
 
     private void OnValidate()
@@ -22,6 +24,7 @@ public class PlayerWallet : MonoBehaviour
     public void TakeMoney(int money)
     {
         _money += money;
+        OnTakeMoney?.Invoke(money);
         UpdateUI();
     }
 

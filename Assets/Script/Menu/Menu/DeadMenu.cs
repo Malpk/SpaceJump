@@ -4,10 +4,13 @@ public class DeadMenu : UIMenu
 {
     [SerializeField] private GameStart _gameController;
     [SerializeField] private JumpScore _score;
-    [SerializeField] private PlayerWallet _wallet;
+    [SerializeField] private BordResult _result;
+    [SerializeField] private GameSession _session;
 
     public void ShowDead()
     {
+        _result.SetRecord(_score.Score);
+        _result.SetMoney(_session.TakeMoney);
         Show();
     }
 

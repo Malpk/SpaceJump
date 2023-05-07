@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 public class DataSaver : MonoBehaviour
 {
@@ -11,28 +12,43 @@ public class DataSaver : MonoBehaviour
 
     private string _data;
 
+    [DllImport("__Internal")]
+    private static extern void SaveExtern(string data);
+    [DllImport("__Internal")]
+    private static extern void LoadExtern();
+
     private void Awake()
     {
         Load();
     }
+
     private void OnApplicationQuit()
     {
         Save();
     }
+
     public void Save()
     {
         _data = GetData();
+#if UNITY_WEBGL && !UNITY_EDITOR
+        LoadExtern();
+#else
         PlayerPrefs.SetString(_saveKey, _data);
+#endif
     }
 
     public void Load()
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        SaveExtern(_data)
+#else
         if (PlayerPrefs.HasKey(_saveKey))
         {
             var data = JsonUtility.FromJson
                 <PlayerData>(PlayerPrefs.GetString(_saveKey));
             SetData(data);
         }
+#endif
     }
 
     private string GetData()
@@ -44,8 +60,8 @@ public class DataSaver : MonoBehaviour
         data.BuyContent = _playerContent.Save();
         return JsonUtility.ToJson(data);
     }
-
-    private void SetData(PlayerData data)
+    
+    public void SetData(PlayerData data)
     {
         _wallet.SetMoney(data.Money);
         _setting.Load(data.MusicSetting);

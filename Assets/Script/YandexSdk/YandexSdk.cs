@@ -12,26 +12,34 @@ public class YandexSdk : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void ShowBannerAdsExtern();
 
-    public void ShowRewardAds(System.Action action)
+    public bool ShowRewardAds(System.Action action)
     {
-        IsReady = false;
-        _action = action;
+        if (IsReady)
+        {
+            IsReady = false;
+            _action = action;
 #if UNITY_WEBGL && !UNITY_EDITOR
          RewardShowAdsExtern();
 #else
-        Reward();
-        CompliteAds();
+            Reward();
+            CompliteAds();
 #endif
+            return true;
+        }
+        return false;
     }
 
     public void ShowBannerAds()
     {
-        IsReady = false;
+        if (IsReady)
+        {
+            IsReady = false;
 #if UNITY_WEBGL && !UNITY_EDITOR
         ShowBannerAdsExtern();
 #else
-        CompliteAds();
+            CompliteAds();
 #endif
+        }
     }
 
     public void Reward()

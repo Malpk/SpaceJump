@@ -421,6 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 3
   _canvas: {fileID: 3928425119248932942}
+  _saver: {fileID: 0}
 --- !u!223 &3928425119248932942
 Canvas:
   m_ObjectHideFlags: 0
@@ -1070,6 +1071,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3928425119631758164}
         m_TargetAssemblyTypeName: ShopUI, Assembly-CSharp
         m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7087286897543171100}
+        m_TargetAssemblyTypeName: ShopMenu, Assembly-CSharp
+        m_MethodName: SaveChoose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
