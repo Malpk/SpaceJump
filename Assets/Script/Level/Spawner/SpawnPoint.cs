@@ -3,7 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public class SpawnPoint
 {
-    [SerializeField] private Vector2[] _rangsPosition;
+    [SerializeField] private int[] _directionsPatern;
 
-    public Vector2[] RangsPosition => _rangsPosition;
+    public int[] Paterns => _directionsPatern;
 }

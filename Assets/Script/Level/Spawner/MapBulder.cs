@@ -6,8 +6,9 @@ public class MapBulder : MonoBehaviour
     [SerializeField] private int _startHeight = -3;
     [SerializeField] private int _heightSteap = 6;
     [SerializeField] private int _mapRadius = 20;
-    [SerializeField] private float _jumpDistance = 10f;
+    [SerializeField] private int _countPlatform = 3;
     [SerializeField] private float _spawnDistance = 3f;
+    [SerializeField] private Vector2 _jumpDistance;
     [Header("SpawnerReference")]
     [SerializeField] private Vector2 _heightOffset;
     [SerializeField] private SpawnPoint[] _offsetsX;
@@ -19,6 +20,10 @@ public class MapBulder : MonoBehaviour
     private float _curretPositionX = 0;
     private List<PoolItem> _platforms = new List<PoolItem>();
     public int Height { get; private set; }
+
+    private void Update()
+    {
+    }
 
     public void Clear()
     {
@@ -36,14 +41,30 @@ public class MapBulder : MonoBehaviour
         var list = new List<PoolItem>();
         if (distance < _spawnDistance)
         {
-            var rangePoints = _offsetsX[Random.Range(0, _offsetsX.Length)].RangsPosition;
-            foreach (var range in rangePoints)
+            var positions = CutLine(new Vector2(0, _mapRadius*2));
+            Height += _heightSteap;
+            foreach (var position in positions)
             {
                 var platform = CreatePlatform();
-                platform.transform.position = GetPosition(range);
+                var upPosition = Height + (int)Random.Range(_heightOffset.x, _heightOffset.y);
+                platform.transform.position = position + Vector2.up * upPosition;
                 list.Add(platform);
             }
+            Height += (int)_heightOffset.y;
         }
+        return list;
+    }
+
+    public List<Vector2> CutLine(Vector2 line)
+    {
+        var steap = Random.Range(_jumpDistance.x, _jumpDistance.y)+1f;
+        var list = new List<Vector2>();
+        var position = Random.Range(line.x, line.y);
+        list.Add(Vector2.right * (position - _mapRadius));
+        if (Mathf.Abs(line.y - position) >= steap)
+            list.AddRange(CutLine(new Vector2(position + steap, line.y)));
+        if (Mathf.Abs(line.x - position) >= steap)
+            list.AddRange(CutLine(new Vector2(line.x, position - steap)));
         return list;
     }
 
@@ -74,23 +95,6 @@ public class MapBulder : MonoBehaviour
         platform.OnDelete += DeleteJumpPlatform;
         _platforms.Add(platform);
         return platform;
-    }
-
-    private Vector2 GetPosition(Vector2 range)
-    {
-        Height += _heightSteap +
-            (int)Random.Range(_heightOffset.x, _heightOffset.y);
-        var x = Random.Range(range.x, range.y) / (_mapRadius * 2);
-        x *= _jumpDistance * 2;
-        x -= _curretPositionX;
-        x = Mathf.Clamp(x, -_mapRadius, _mapRadius);
-        if (_curretPositionX + _jumpDistance > _mapRadius)
-            _curretPositionX -= _jumpDistance;
-        else if (_curretPositionX - _jumpDistance < -_mapRadius)
-            _curretPositionX += _jumpDistance;
-        else
-            _curretPositionX = x + Random.Range(-_jumpDistance, _jumpDistance);
-        return Vector2.up * Height + Vector2.right * x;
     }
 
     private void DeleteJumpPlatform(PoolItem platform)

@@ -296,14 +296,15 @@ MonoBehaviour:
   _startHeight: -3
   _heightSteap: 3
   _mapRadius: 20
-  _jumpDistance: 10
+  _countPlatform: 3
   _spawnDistance: 50
+  _jumpDistance: {x: 0, y: 0}
   _heightOffset: {x: 0, y: 1}
   _offsetsX:
-  - _rangsPosition: []
-  - _rangsPosition: []
-  - _rangsPosition: []
-  - _rangsPosition: []
+  - _directionsPatern: 
+  - _directionsPatern: 
+  - _directionsPatern: 
+  - _directionsPatern: 
   _poolHolder: {fileID: 3851351108587152301}
   _player: {fileID: 0}
   _score: {fileID: 0}
