@@ -56,4 +56,8 @@ mergeInto(LibraryManager.library,
 	{
 		lb.setLeaderboardScore('lederBord', score);
 	},
+	ShowLeaderBoradExtern : function()
+	{
+		lb.getLeaderboardEntries('lederBord');
+	},
 });

@@ -5,6 +5,7 @@ public class AdsController : MonoBehaviour
     [SerializeField] private YandexSdk _sdk;
     [SerializeField] private DeadMenu _deadMenu;
     [SerializeField] private GameStart _game;
+    [SerializeField] private DataSaver _save;
     [SerializeField] private GameSession _session;
     [Header("Buttons")] 
     [SerializeField] private GameObject _dubleAds;
@@ -38,5 +39,6 @@ public class AdsController : MonoBehaviour
     {
         _session.DubleMoney();
         _deadMenu.UpdateBord();
+        _save.Save();
     }
 }

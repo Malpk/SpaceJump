@@ -17,7 +17,6 @@ public class GameStart : MonoBehaviour
     private void Play()
     {
         _player.Play();
-        _score.Reset();
         _maps.Play();
     }
 
@@ -30,9 +29,7 @@ public class GameStart : MonoBehaviour
 
     public void Restart()
     {
-        _player.Reset();
-        _ads.Reset();
-        _maps.ClearMap();
+        Reset();
         Play();
         _player.StartGame();
     }
@@ -52,9 +49,15 @@ public class GameStart : MonoBehaviour
 
     public void BackMainMenu()
     {
+        Reset();
+        Play();
+    }
+
+    private void Reset()
+    {
         _player.Reset();
         _ads.Reset();
+        _score.Reset();
         _maps.ClearMap();
-        Play();
     }
 }

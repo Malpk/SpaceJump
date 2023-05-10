@@ -1,9 +1,14 @@
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 public class MainMenu : UIMenu
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private PlayerStateSwitcher _gameStart;
+
+
+    [DllImport("__Internal")]
+    private static extern void ShowLeaderBoradExtern();
 
     public void StartGame()
     {
@@ -29,5 +34,12 @@ public class MainMenu : UIMenu
     {
         ShowMenu(MenuType.HUD);
         _gameStart.StartGame();
+    }
+
+    public void ShowLeaderBorad()
+    {
+#if !UNITY_EDITOR && UNITY_WEBGL
+        ShowLeaderBoradExtern();
+#endif
     }
 }

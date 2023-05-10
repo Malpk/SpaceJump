@@ -11,7 +11,6 @@ public class MapBulder : MonoBehaviour
     [SerializeField] private Vector2 _jumpDistance;
     [Header("SpawnerReference")]
     [SerializeField] private Vector2 _heightOffset;
-    [SerializeField] private SpawnPoint[] _offsetsX;
     [SerializeField] private ItemHolder _poolHolder;
     [Header("Reference")]
     [SerializeField] private Player _player;
@@ -20,10 +19,6 @@ public class MapBulder : MonoBehaviour
     private float _curretPositionX = 0;
     private List<PoolItem> _platforms = new List<PoolItem>();
     public int Height { get; private set; }
-
-    private void Update()
-    {
-    }
 
     public void Clear()
     {

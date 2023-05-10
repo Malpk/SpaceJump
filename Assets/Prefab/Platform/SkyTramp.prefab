@@ -60,21 +60,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd4920ebb2fb084199b9833faaa7dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClear:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7998458793699168847}
-        m_TargetAssemblyTypeName: JumpPlatform, Assembly-CSharp
-        m_MethodName: DeleteContent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!61 &3659681300730735484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,7 +182,7 @@ Animator:
   m_GameObject: {fileID: 3616443054770741088}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e351ff2af6a8ca4ca08f390fc44519f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 81ac650c8312d3742abc11a2aff25ea6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
